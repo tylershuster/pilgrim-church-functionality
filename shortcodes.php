@@ -122,13 +122,21 @@ function pilgrim_login_form() {
 
 	ob_start();
 
-	if( ! is_user_logged_in() ) {
+		if( ! is_user_logged_in() ) {
 
-		wp_logout();
+			wp_logout();
 
-	}
+		}
 
-	wp_login_form( $args );
+		wp_login_form( $args );
+
+		?>
+
+		<h2>Need an Account?</h2>
+
+		<a href="<?php echo get_bloginfo('admin_email'); ?>">Email <?php echo get_bloginfo('admin_email'); ?> to register an account.</a> I'll typically respond within a few days.
+
+		<?php
 
 
 	return ob_get_clean();
